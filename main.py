@@ -103,11 +103,12 @@ def sqroot():
     sq=np.sqrt(var8)
     entrytxt.insert(0,sq)
 
-def py():
+def div():
     data9=entrytxt.get()
     var9=int(data9)
-    py=np.divide(var9)
-    entrytxt.insert(0,py)
+    div=np.divide(var9,var9)
+    entrytxt.insert(0,div)
+
 
 btn1=Button(btnframe,text="1",bd=3,bg="#4B5320",width=12,height=2,fg="black",activebackground="blue",command=lambda:btnclck(1))
 btn1.grid(row=1,column=0)
@@ -143,7 +144,7 @@ btn0.grid(row=4,column=0)
 btndot=Button(btnframe,text=".",bd=3,bg="#4B5320",width=12,height=2,fg="black",activebackground="blue",command=lambda:btnclck("."))
 btndot.grid(row=4,column=1)
 
-btndiv=Button(btnframe,text="π",bd=3,bg="#C19A6B",width=12,height=2,fg="black",activebackground="blue",command=py)
+btndiv=Button(btnframe,text="π",bd=3,bg="#C19A6B",width=12,height=2,fg="black",activebackground="blue")
 btndiv.grid(row=0,column=4)
 
 btn2py=Button(btnframe,text="2π",bd=3,bg="#C19A6B",width=12,height=2,fg="black",activebackground="blue")
@@ -183,7 +184,7 @@ btnsinh.grid(row=1,column=6)
 btnqube=Button(btnframe,text=chr(8731),bd=3,bg="#C19A6B",width=12,height=2,fg="black",activebackground="blue",command=sqroot)
 btnqube.grid(row=2,column=6)
 
-btnsinh=Button(btnframe,text=chr(247),bd=3,bg="#C19A6B",width=12,height=2,fg="black",activebackground="blue",command=lambda:btnclck("/"))
+btnsinh=Button(btnframe,text=chr(247),bd=3,bg="#C19A6B",width=12,height=2,fg="black",activebackground="blue",command=div)
 btnsinh.grid(row=3,column=6)
 
 btnx=Button(btnframe,text="x!",bd=3,bg="#C19A6B",width=12,height=2,fg="black",activebackground="blue")
