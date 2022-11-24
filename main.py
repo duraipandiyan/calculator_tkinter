@@ -27,10 +27,44 @@ btnclr.grid(row=0,column=0)
 btnallclr=Button(btnframe,text="AC",bd=3,bg="red",width=12,height=2,fg="black",activebackground="blue",command=allclear)
 btnallclr.grid(row=0,column=1)
 
+def add():
+    data13=entrytxt.get()
+    var13=int(data13)
+    entrytxt.delete(0,END)
+
+    da=entrytxt.get()
+    var=int(da)
+    entrytxt.delete(0, END)
+    va=var13+var
+    entrytxt.insert(0,va)
+
+
+
+
+def div():
+    data9=entrytxt.get()
+    var9=int(data9)
+    entrytxt.delete(0,END)
+    div=np.divide(var9,var9)
+
+    entrytxt.insert(0,div)
+
+def power():
+   data14=entrytxt.get()
+   d=entrytxt.get()
+   v=int(d)
+   var14=int(data14)
+
+   po = np.math.pow(var14,0)
+   if var14 == 1 or var14 == 2 or var14 == 3 or var14 == 4 or var14 == 5 or var14 == 6 or var14 == 7 or var14 == 8 or var14 == 9:
+     entrytxt.insert(0,po**v)
+
+
+
 btnroot=Button(btnframe,text="√",bd=3,bg="gray",width=12,height=2,fg="black",activebackground="blue",command=lambda:btnclck("√"))
 btnroot.grid(row=0,column=2)
 
-btnpl=Button(btnframe,text="+",bd=3,bg="gray",width=12,height=2,fg="black",activebackground="blue",command=lambda:btnclck("+"))
+btnpl=Button(btnframe,text="+",bd=3,bg="gray",width=12,height=2,fg="black",activebackground="blue",command=add)
 btnpl.grid(row=0,column=3)
 
 btnmin=Button(btnframe,text="*",bd=3,bg="gray",width=12,height=2,fg="black",activebackground="blue",command=lambda:btnclck("*"))
@@ -40,7 +74,7 @@ btnmul=Button(btnframe,text="-",bd=3,bg="gray",width=12,height=2,fg="black",acti
 btnmul.grid(row=2,column=3)
 
 
-btnsl=Button(btnframe,text="^",bd=3,bg="gray",width=12,height=2,fg="black",activebackground="blue",command=lambda:btnclck("^"))
+btnsl=Button(btnframe,text="^",bd=3,bg="gray",width=12,height=2,fg="black",activebackground="blue",command=power)
 btnsl.grid(row=4,column=3)
 
 btneq=Button(btnframe,text="=",bd=3,bg="gray",width=12,height=2,fg="black",activebackground="blue",command=lambda:btnclck("="))
@@ -97,17 +131,27 @@ def log():
     var7=int(data7)
     log=np.log10(var7)
     entrytxt.insert(0,log)
+
+
 def sqroot():
     data8=entrytxt.get()
     var8=int(data8)
     sq=np.sqrt(var8)
     entrytxt.insert(0,sq)
 
-def div():
-    data9=entrytxt.get()
-    var9=int(data9)
-    div=np.divide(var9,var9)
-    entrytxt.insert(0,div)
+def py():
+    data11=entrytxt.get()
+    var11=int(data11)
+    p=np.pi
+    if var11==1 or var11==2 or var11==3 or var11==4 or var11==5 or var11==6 or var11==7 or var11==8 or var11==9:
+     entrytxt.insert(0,p*var11)
+
+def fact():
+    data12=entrytxt.get()
+    var12=int(data12)
+    entrytxt.delete(0,END)
+    fact=np.math.factorial(var12)
+    entrytxt.insert(0,fact)
 
 
 btn1=Button(btnframe,text="1",bd=3,bg="#4B5320",width=12,height=2,fg="black",activebackground="blue",command=lambda:btnclck(1))
@@ -144,7 +188,7 @@ btn0.grid(row=4,column=0)
 btndot=Button(btnframe,text=".",bd=3,bg="#4B5320",width=12,height=2,fg="black",activebackground="blue",command=lambda:btnclck("."))
 btndot.grid(row=4,column=1)
 
-btndiv=Button(btnframe,text="π",bd=3,bg="#C19A6B",width=12,height=2,fg="black",activebackground="blue")
+btndiv=Button(btnframe,text="π",bd=3,bg="#C19A6B",width=12,height=2,fg="black",activebackground="blue",command=py)
 btndiv.grid(row=0,column=4)
 
 btn2py=Button(btnframe,text="2π",bd=3,bg="#C19A6B",width=12,height=2,fg="black",activebackground="blue")
@@ -187,7 +231,7 @@ btnqube.grid(row=2,column=6)
 btnsinh=Button(btnframe,text=chr(247),bd=3,bg="#C19A6B",width=12,height=2,fg="black",activebackground="blue",command=div)
 btnsinh.grid(row=3,column=6)
 
-btnx=Button(btnframe,text="x!",bd=3,bg="#C19A6B",width=12,height=2,fg="black",activebackground="blue")
+btnx=Button(btnframe,text="x!",bd=3,bg="#C19A6B",width=12,height=2,fg="black",activebackground="blue",command=fact)
 btnx.grid(row=4,column=6)
 
 
